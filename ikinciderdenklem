@@ -1,0 +1,29 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+void main()
+{
+	float delta, a, b, c, kok1, kok2;
+	system("cls");
+	cout << "x2’nin katsayısı= "; cin >> a;
+	cout << "\n x’in katsayısı= "; cin >> b;
+	cout << "\n Sabit değer= "; cin >> c;
+	//delta = b * b – 4 * a * c;
+	delta = pow(b, 2) - 4 * a*c;
+	// ilk durum; delta sıfırdan küçük. Gerçek kök yok.
+	if (delta < 0) cout << "\n\n Gerçek kök yok! ";
+	// ikinci durum; delta sıfıra eşit. Tek gerçek kök var
+	else if (delta == 0)
+	{
+		kok1 = (-1 * b) / (2 * a);
+		cout << " \n\n Tek kök var=" << kok1;
+	}
+	// Üçüncü durum, iki gerçek kök var.
+	else if (delta > 0)
+	{
+		kok1 = (-1 * b + sqrt(delta)) / (2 * a);
+		kok2 = (-1 * b - sqrt(delta)) / (2 * a);
+		cout << " \n\n 1. kök =" << kok1;
+		cout << " \n 2. kök = " << kok2;
+	}
+}
